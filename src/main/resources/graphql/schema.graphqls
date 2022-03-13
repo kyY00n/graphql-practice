@@ -1,0 +1,72 @@
+type Query {
+    productTemplatesInputGroupByCategoryId(categoryId: ID!): InputGroup # 탬플릿 인풋 그룹
+}
+
+type Mutation {
+    # 상품 생성
+    createProduct(createProductInput: CreateProductInput!): Product
+}
+
+type Product implements Node {
+    # product global id
+    id: ID!
+
+    # product local id
+    _id: ID!
+
+    # product deleted or not
+    deleted: Boolean!
+}
+
+input CreateProductInput {
+    name: String!
+    categoryId: ID!
+    stock: Int
+    thumbnailIds: [ID!]!
+    content: String!
+    attributes: [ProductAttributeInput!]
+    voucherTicketInput: CreateVoucherTicketProductInput
+    templates: [ProductAttributeInput!]
+}
+
+input CreateVoucherTicketProductInput {
+    validDays: Int!
+    benefit: String # 추가혜택
+}
+
+type InputGroup {
+    nodes: [InputGroupNode!]!
+}
+
+type InputGroupNode {
+    label: String!
+    type: InputGroupNodeType!
+    dataKey: String!
+    required: Boolean!
+    placeholder: String
+    helpText: String
+    initialValue: String
+}
+
+enum InputGroupNodeType {
+    TEXTAREA,
+    TEXT_INPUT,
+    DATE_INPUT,
+    NUMBER_INPUT,
+    CHECKBOX,
+}
+
+input UpdateProductInput {
+
+    templates: [ProductAttributeInput!]
+}
+
+input ProductAttributeInput {
+    dataKey: String!
+    value: String!
+}
+
+
+interface Node {
+    id: ID!
+}
