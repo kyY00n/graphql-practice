@@ -14,6 +14,9 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.springframework.boot:spring-boot-starter-webflux:2.6.4")
 
+    implementation(KotlinX.coroutines.core)
+    implementation(KotlinX.coroutines.reactor)
+
     // graphql
     implementation("com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-webflux:11.0.0")
     testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0")
