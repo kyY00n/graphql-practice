@@ -4,8 +4,8 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 
-@Table("category_templates")
-class CategoryHasTemplateItems(
+@Table("product_category_templates")
+class ProductCategoryTemplates(
     @Id
     var id: Long = 0,
     @Column("category_id")
@@ -34,7 +34,7 @@ class CategoryHasTemplateItems(
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as CategoryHasTemplateItems
+        other as ProductCategoryTemplates
 
         if (id != other.id) return false
         if (categoryId != other.categoryId) return false

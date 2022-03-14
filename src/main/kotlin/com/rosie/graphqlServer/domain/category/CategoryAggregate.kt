@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component
 class CategoryAggregate(
     private val categoryHasTemplateItemsRepository: CategoryHasTemplateItemsRepository,
 ) {
-    suspend fun findTemplates(categoryId: Int): Flow<CategoryHasTemplateItems> {
+    suspend fun findTemplates(categoryId: Int): Flow<ProductCategoryTemplates> {
         return categoryHasTemplateItemsRepository.findByCategoryId(categoryId)
     }
 
-    suspend fun findTemplatesByCategoryIds(categoryIds: Set<Int>): Map<Int, List<CategoryHasTemplateItems>> {
+    suspend fun findTemplatesByCategoryIds(categoryIds: Set<Int>): Map<Int, List<ProductCategoryTemplates>> {
         return categoryHasTemplateItemsRepository.findAllByCategoryIdIn(categoryIds)
             .toList()
             .groupBy { it.categoryId }

@@ -1,7 +1,7 @@
 package com.rosie.graphqlServer.graphql.dataloader
 
 import com.rosie.graphqlServer.domain.category.CategoryAggregate
-import com.rosie.graphqlServer.domain.category.CategoryHasTemplateItems
+import com.rosie.graphqlServer.domain.category.ProductCategoryTemplates
 import com.rosie.graphqlServer.graphql.CachedBatchLoader
 import com.rosie.graphqlServer.graphql.annotation.QualifiedBatchLoader
 import com.rosie.graphqlServer.graphql.model.InputGroupNodeTO
@@ -26,7 +26,7 @@ class ProductTemplatesInputGroupNodeBatchLoader(
     override fun load(inputs: MutableSet<Inputs>): CompletionStage<Map<Inputs, List<InputGroupNodeTO>>> {
         val categoryIds: Set<Int> = inputs.map { it.categoryId.toInt() }.toSet()
         return CoroutineScope(Dispatchers.IO).future {
-            val categoryIdToTemplates: Map<Int, List<CategoryHasTemplateItems>> =
+            val categoryIdToTemplates: Map<Int, List<ProductCategoryTemplates>> =
                 categoryAggregate.findTemplatesByCategoryIds(categoryIds).toMap()
             inputs.associateWith { input ->
                 categoryIdToTemplates[input.categoryId.toInt()]!!.map {
