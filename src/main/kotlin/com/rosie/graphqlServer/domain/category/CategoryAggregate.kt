@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component
 class CategoryAggregate(
     private val categoryRepository: CategoryRepository,
     private val categoryHasTemplateItemsRepository: CategoryHasTemplateItemsRepository,
-    private val templateItemsRepository: TemplateItemsRepository
 ) {
     suspend fun findTemplates(categoryId: Int) {
 //        categoryHasTemplateItemsRepository.findByCategoryId(categoryId).map { categoryTemplate ->

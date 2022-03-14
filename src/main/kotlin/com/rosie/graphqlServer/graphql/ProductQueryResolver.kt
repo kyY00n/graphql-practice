@@ -5,8 +5,10 @@ import com.rosie.graphqlServer.graphql.model.InputGroupNodeTO
 import com.rosie.graphqlServer.graphql.model.InputGroupTO
 import graphql.kickstart.tools.GraphQLQueryResolver
 import graphql.schema.DataFetchingEnvironment
+import org.springframework.stereotype.Component
 import java.util.concurrent.CompletableFuture
 
+@Component
 class ProductQueryResolver : GraphQLQueryResolver {
     fun productTemplatesInputGroupByCategoryId(
         categoryId: String,

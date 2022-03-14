@@ -10,3 +10,18 @@ spring:
     password: rkdudmysql4_
     pool:
       enabled: false
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+  altair:
+    enabled: true
+    mapping: /altair
+    subscriptions:
+      timeout: 30
+      reconnect: false
+    static:
+      base-path: /
+    page-title: Altair
+    options:
+      endpoint-url: /graphql
