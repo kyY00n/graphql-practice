@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$USER_HOME$/Desktop/commerce_alpha_business1_cusieftkzlyg_ap_northeast_2_rds_amazonaws_com-2022_03_14_18_25_15-dump.sql" dialect="MySQL" />
     <file url="PROJECT" dialect="H2" />
   </component>
 </project>

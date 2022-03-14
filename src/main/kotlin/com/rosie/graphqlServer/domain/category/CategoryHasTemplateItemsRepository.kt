@@ -1,8 +1,9 @@
 package com.rosie.graphqlServer.domain.category
 
-import org.springframework.data.repository.reactive.ReactiveCrudRepository
-import reactor.core.publisher.Flux
+import kotlinx.coroutines.flow.Flow
+import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 
-interface CategoryHasTemplateItemsRepository : ReactiveCrudRepository<CategoryHasTemplateItems, Int> {
-    fun findByCategoryId(categoryId: Int): Flux<CategoryHasTemplateItems>
+interface CategoryHasTemplateItemsRepository : CoroutineCrudRepository<CategoryHasTemplateItems, Int> {
+    fun findByCategoryId(categoryId: Int): Flow<CategoryHasTemplateItems>
+    fun findAllByCategoryIdIn(categoryIds: Set<Int>): Flow<CategoryHasTemplateItems>
 }

@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 
-@Table("category_has_template_items")
+@Table("category_templates")
 class CategoryHasTemplateItems(
     @Id
     var id: Long = 0,

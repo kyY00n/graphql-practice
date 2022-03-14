@@ -20,7 +20,7 @@ class ProductQueryResolver : GraphQLQueryResolver {
 
         return dataLoader.load(
             ProductTemplatesInputGroupNodeBatchLoader.Inputs(
-                categoryId = "1"
+                categoryId = categoryId
             )
         ).thenApply {
             InputGroupTO(it)
