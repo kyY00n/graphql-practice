@@ -15,9 +15,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux:2.6.4")
 
     // graphql
-    implementation("com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-webflux:6.0.0")
+    implementation("com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-webflux:11.0.0")
     testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0")
-    implementation("com.graphql-java-kickstart:graphql-java-tools:12.0.2")
+    implementation("com.graphql-java-kickstart:graphql-java-tools:11.0.0")
     implementation("com.graphql-java-kickstart:graphql-kickstart-spring-boot-autoconfigure-tools:11.1.0")
 
 

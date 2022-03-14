@@ -14,12 +14,12 @@ class ProductQueryResolver : GraphQLQueryResolver {
         categoryId: String,
         env: DataFetchingEnvironment
     ): CompletableFuture<InputGroupTO> {
-        val dataLoader = env.getDataLoader<ProductTemplatesInputGroupNodeBatchLoader.Input, List<InputGroupNodeTO>>(
+        val dataLoader = env.getDataLoader<ProductTemplatesInputGroupNodeBatchLoader.Inputs, List<InputGroupNodeTO>>(
             ProductTemplatesInputGroupNodeBatchLoader::class
         )
 
         return dataLoader.load(
-            ProductTemplatesInputGroupNodeBatchLoader.Input(
+            ProductTemplatesInputGroupNodeBatchLoader.Inputs(
                 categoryId = "1"
             )
         ).thenApply {
